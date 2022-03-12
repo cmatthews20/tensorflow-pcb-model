@@ -52,7 +52,17 @@ files = {
     'TF_RECORD_SCRIPT': os.path.join(paths['SCRIPTS_PATH'], TF_RECORD_SCRIPT_NAME), 
     'LABELMAP': os.path.join(paths['ANNOTATION_PATH'], LABEL_MAP_NAME)
 }
+# SECTIOn 2 -----------------------------------------------------------------------------------------
+# Need a map for all the different image labels
+labels = [{'name':'ElectrolyticCapacitor', 'id':1}, {'name':'IC', 'id':2}, {'name':'LED', 'id':3}]
 
+with open(files['LABELMAP'], 'w') as f: # Writes to LABELMAP file
+    for label in labels:
+        f.write('item { \n')
+        f.write('\tname:\'{}\'\n'.format(label['name']))
+        f.write('\tid:{}\n'.format(label['id']))
+        f.write('}\n')
+        
 # SECTION 8 ------------------------------------------------------------------------------------------
 # Load pipeline config and build a detection model
 configs = config_util.get_configs_from_pipeline_file(files['PIPELINE_CONFIG'])
