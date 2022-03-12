@@ -52,7 +52,7 @@ files = {
     'TF_RECORD_SCRIPT': os.path.join(paths['SCRIPTS_PATH'], TF_RECORD_SCRIPT_NAME), 
     'LABELMAP': os.path.join(paths['ANNOTATION_PATH'], LABEL_MAP_NAME)
 }
-# SECTIOn 2 -----------------------------------------------------------------------------------------
+# SECTION 2 -----------------------------------------------------------------------------------------
 # Need a map for all the different image labels
 labels = [{'name':'ElectrolyticCapacitor', 'id':1}, {'name':'IC', 'id':2}, {'name':'LED', 'id':3}]
 
